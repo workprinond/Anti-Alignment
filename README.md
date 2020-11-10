@@ -30,7 +30,7 @@ What things you need to install the software and how to install them
 We use [Git](https://git-scm.com/) for versioning. For the versions available, see the tags on this repository.
 
 ## License
-This project is licensed under the Apache License - see the [LICENSE.md](https://git.rwth-aachen.de/andrei.z/lab-anti-alignment/-/blob/master/LICENSE) file for details
+This project is licensed under the Apache License - see the [LICENSE.md](https://github.com/workprinond/Anti-Alignment/blob/master/LICENSE) file for details
 
 ## Acknowledgments
 ...

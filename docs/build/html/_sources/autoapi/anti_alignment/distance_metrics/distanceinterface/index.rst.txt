@@ -1,0 +1,70 @@
+:mod:`anti_alignment.distance_metrics.distance-interface`
+=========================================================
+
+.. py:module:: anti_alignment.distance_metrics.distance-interface
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignment.distance_metrics.distance-interface.DistanceMetricInterface
+   anti_alignment.distance_metrics.distance-interface.Levenshtein_Distance
+   anti_alignment.distance_metrics.distance-interface.LongestCommonSubsequence
+   anti_alignment.distance_metrics.distance-interface.Jaro_Winkler_Distance
+
+
+
+.. py:class:: DistanceMetricInterface(first_trace, second_trace)
+
+   Bases: :class:`abc.ABC`
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+   .. method:: execute_distance(self)
+      :abstractmethod:
+
+
+
+
+.. py:class:: Levenshtein_Distance(first_trace, second_trace)
+
+   Bases: :class:`anti_alignment.distance_metrics.distance-interface.DistanceMetricInterface`
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+   .. method:: execute_distance(self)
+
+
+
+
+.. py:class:: LongestCommonSubsequence(first_trace, second_trace)
+
+   Bases: :class:`anti_alignment.distance_metrics.distance-interface.DistanceMetricInterface`
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+   .. method:: execute_distance(self)
+
+
+
+
+.. py:class:: Jaro_Winkler_Distance(first_trace, second_trace)
+
+   Bases: :class:`anti_alignment.distance_metrics.distance-interface.DistanceMetricInterface`
+
+   Helper class that provides a standard way to create an ABC using
+   inheritance.
+
+   .. method:: execute_distance(self)
+
+
+
+

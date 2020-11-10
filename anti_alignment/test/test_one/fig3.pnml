@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="p_2">
+        <name>
+          <text>p_2</text>
+        </name>
+      </place>
+      <place id="p_3">
+        <name>
+          <text>p_3</text>
+        </name>
+      </place>
+      <place id="p_1">
+        <name>
+          <text>p_1</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <transition id="tau_f">
+        <name>
+          <text>tau_f</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="0588d893-8a72-45f9-b532-66c86bf08ae9"/>
+      </transition>
+      <transition id="C">
+        <name>
+          <text>C</text>
+        </name>
+      </transition>
+      <transition id="D">
+        <name>
+          <text>D</text>
+        </name>
+      </transition>
+      <transition id="E">
+        <name>
+          <text>E</text>
+        </name>
+      </transition>
+      <transition id="F">
+        <name>
+          <text>F</text>
+        </name>
+      </transition>
+      <transition id="G">
+        <name>
+          <text>G</text>
+        </name>
+      </transition>
+      <transition id="H">
+        <name>
+          <text>H</text>
+        </name>
+      </transition>
+      <transition id="I">
+        <name>
+          <text>I</text>
+        </name>
+      </transition>
+      <transition id="A">
+        <name>
+          <text>A</text>
+        </name>
+      </transition>
+      <transition id="tau_i">
+        <name>
+          <text>tau_i</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="683098e0-5d16-4248-bc0a-784568e466ce"/>
+      </transition>
+      <transition id="B">
+        <name>
+          <text>B</text>
+        </name>
+      </transition>
+      <arc id="135360090376" source="p_2" target="tau_f"/>
+      <arc id="-9223371901494685429" source="A" target="p_2"/>
+      <arc id="135360090383" source="B" target="p_2"/>
+      <arc id="-9223371901494685422" source="C" target="p_2"/>
+      <arc id="135360090390" source="D" target="p_2"/>
+      <arc id="-9223371901494685415" source="E" target="p_2"/>
+      <arc id="135360090397" source="F" target="p_2"/>
+      <arc id="-9223371901494685408" source="G" target="p_2"/>
+      <arc id="135360060452" source="tau_i" target="p_2"/>
+      <arc id="135360090404" source="H" target="p_2"/>
+      <arc id="-9223371901494685401" source="I" target="p_2"/>
+      <arc id="135360090411" source="tau_f" target="p_3"/>
+      <arc id="-9223371901494692173" source="p_1" target="tau_i"/>
+      <arc id="-9223371901494692159" source="p_2" target="B"/>
+      <arc id="-9223371901494692124" source="p_2" target="A"/>
+      <arc id="135360083688" source="p_2" target="I"/>
+      <arc id="-9223371901494692117" source="p_2" target="C"/>
+      <arc id="135360083695" source="p_2" target="D"/>
+      <arc id="-9223371901494692110" source="p_2" target="E"/>
+      <arc id="135360083702" source="p_2" target="F"/>
+      <arc id="-9223371901494692103" source="p_2" target="G"/>
+      <arc id="135360083709" source="p_2" target="H"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p_3">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

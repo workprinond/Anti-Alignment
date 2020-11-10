@@ -1,0 +1,59 @@
+:mod:`anti_alignment.preprocessing.InputHandler`
+================================================
+
+.. py:module:: anti_alignment.preprocessing.InputHandler
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignment.preprocessing.InputHandler.InputHandler
+
+
+
+.. py:class:: InputHandler(pathnet, pathlog, logtype)
+
+   Class for Input Handler contains all methods necessary for the user to create an object of filtered traces
+   Instance Attributes:
+       pathnet: Petrinet path value of the InputHandler object
+       pathlog: Log path of the InputHandler object
+       logtype: CSV or IEEE type log InputHandler object
+
+   .. method:: ieee_xes_loghandler(self)
+
+
+      Loads the XES type log from the path
+      :return: The log
+
+
+   .. method:: csv_loghandler(self)
+
+
+      Loads the CSV type log from the path
+      :return: The log
+
+
+   .. method:: petrinethandler(self)
+
+
+      Loads the pnml file from the path
+      :return: The petrinet with its initial and final marking
+
+
+   .. method:: filtering_traces(self)
+
+
+      Calculates the filtered traces which fits the model
+      :return: The filtered traces in a list
+
+
+   .. method:: petrinetcreator(self, places, transitions, arcs)
+
+
+
+

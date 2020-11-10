@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to Anti-Alignments for Measuring Precision and Generalization’s documentation! &mdash; Anti-Alignments for Measuring Precision and Generalization 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Getting Started" href="GettingStrated.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> Anti-Alignments for Measuring Precision and Generalization
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStrated.html">1.      Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LICENSE.html">2.      License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Help.html">3.      Help!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">4. API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Anti-Alignments for Measuring Precision and Generalization</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to Anti-Alignments for Measuring Precision and Generalization’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-anti-alignments-for-measuring-precision-and-generalization-s-documentation">
+<h1>Welcome to Anti-Alignments for Measuring Precision and Generalization’s documentation!<a class="headerlink" href="#welcome-to-anti-alignments-for-measuring-precision-and-generalization-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>In this project, we implement a novel approach based on the paper <a class="reference external" href="https://hal.archives-ouvertes.fr/hal-01406850">“A Unified Approach for Measuring Precision and Generalization based on Anti-alignments,”</a>
+written by B.F. van Dongen et. al. The approach aims to provide a better estimation of precision and generalization by using ​anti-alignments​.
+An anti-alignment is a run of a model that deviates
+as much as possible from any trace contained in the corresponding event log.</p>
+<div class="section" id="what-is-process-mining">
+<h2>What is Process Mining?<a class="headerlink" href="#what-is-process-mining" title="Permalink to this headline">¶</a></h2>
+<p>Process mining is to gain insights into the behavior of operational information systems by analyzing event logs,it is an analytical discipline for discovering,
+monitoring, and improving real processes (i.e., not assumed processes) by extracting knowledge from event logs readily available in today’s information systems.
+it offers objective, fact-based insights, derived from actual event logs, that help you audit, analyze,
+and improve your existing business processes by answering both compliance-related and performance-related questions.
+Below figure is an example for describing an observed behavior of a project execution process in a form of an (executable) process model, visualized by petri-net.</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/pt.png"><img alt="alternate text" src="_images/pt.png" style="width: 400px; height: 200px;" /></a>
+</div>
+<p class="centered">
+<strong>Fig 1: Simple Petri net for the process of project execution</strong></p></div>
+<div class="section" id="why-conformance-checking">
+<h2>Why Conformance Checking?<a class="headerlink" href="#why-conformance-checking" title="Permalink to this headline">¶</a></h2>
+<p>There has been always a discussion on how to interpret process discovery results, i.e. how does the produced model relate to the actual, but unknown, system
+in four quality dimensions:</p>
+<ul class="simple">
+<li><p><strong>Fitness :</strong> quantifies how much of the observed behavior is captured by the model,</p></li>
+<li><p><strong>Generalization :</strong> quantifies how well the model explains unobserved system behavior,</p></li>
+<li><p><strong>Precision :</strong> quantifies how much behavior exists in the model that was not observed, and</p></li>
+<li><p><strong>Simplicity :</strong> quantifies the complexity of the model.</p></li>
+</ul>
+</div>
+<div class="section" id="how-our-project-related">
+<h2>How our Project Related?<a class="headerlink" href="#how-our-project-related" title="Permalink to this headline">¶</a></h2>
+<p>The focus of this project is not on fitness nor simplicity, as we assume our models to be perfectly fitting by preprocessing the log and removing the unfitted logs.
+Based on the paper and in this implementation, we take a fresh look at precision and generalization by using the concept of an anti-alignment.
+An anti-alignment of a model with respect to a log is an execution of a model which is as different as possible from the observed log.
+We instruct and adapt cross-validation-based techniques in combination with anti-alignments
+to derive solid metrics that show a better estimation with respect to the state-of-the-art metrics</p>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GettingStrated.html">1.      Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LICENSE.html">2.      License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Help.html">3.      Help!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">4. API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/setup/index.html">4.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">setup</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/anti_alignment/index.html">4.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">anti_alignment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/search_tree/index.html">4.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">search_tree</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/dfs/index.html">4.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dfs</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/anti_alignments/index.html">4.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">anti_alignments</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoapi/conf/index.html">4.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">conf</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="indices-and-tables">
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GettingStrated.html" class="btn btn-neutral float-right" title="1. Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrei Zimansky, Harry Beyel, Prinon Das, Ahmed ElDesouki
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

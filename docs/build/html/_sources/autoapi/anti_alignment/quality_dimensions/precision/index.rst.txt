@@ -1,0 +1,51 @@
+:mod:`anti_alignment.quality_dimensions.precision`
+==================================================
+
+.. py:module:: anti_alignment.quality_dimensions.precision
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignment.quality_dimensions.precision.apply
+   anti_alignment.quality_dimensions.precision.trace_based_precision
+   anti_alignment.quality_dimensions.precision.log_based_precision
+
+
+.. function:: apply(log, model, i_m, f_m, n=None, alpha=0.5)
+
+   To call method to obtain the precision score given those parameters
+   :param log: event log object of PM4Py
+   :param model: Petri Net object of PM4Py
+   :param i_m: Initial marking of given Petri Net
+   :param f_m: Final marking of given Petri Net
+   :param n: length of the longest
+   :param alpha: Weight of trace based score. 1-alpha is weight of log-based score
+   :return: Precision Score
+
+
+.. function:: trace_based_precision(alignment_factory, log)
+
+   Computes the trace-based precision.
+   :param alignment_dict: Dictionary, where the keys are the length of a alignment, and the value is a list of
+   alignments
+   :param log: Log that is already converted into a list of trace variants
+   :return: trace.based precision score
+
+
+.. function:: log_based_precision(alignment_factory, log)
+
+   Compute the log based precision. Note that we do not have to consider a maximum length in this case. The computation
+   of the dictionary already considers a bounded length n.
+   :param alignment_dict: dictionary, where the keys are the length of a alignment, and the value is a list of
+   alignments
+   :param log: Log that is already converted into a list of trace variants
+   :return: log based precision score
+
+

@@ -1,0 +1,137 @@
+from anti_alignment.objects.anti_alignments import AntiAlignmentFactory
+<<<<<<< HEAD
+from anti_alignment.preprocessing.utility import Utility
+=======
+from anti_alignment.preprocessing.utility import clean_log_from_non_fitting_traces,check_inputs, check_if_flower_model
+>>>>>>> 6c40ac8c073c8964e380a6c7bede009240a2b35c
+import sys
+
+class Precision:
+    def __init__(self,log,model,i_m,f_m):
+        self.log = log
+        self.model = model
+        self.i_m = i_m
+        self.f_m =f_m
+
+<<<<<<< HEAD
+    def apply(self, n=None, alpha=0.5):
+        """
+        To call method to obtain the precision score given those parameters
+        :param n: length of the longest
+        :param alpha: Weight of trace based score. 1-alpha is weight of log-based score
+        :return: Precision Score
+        """
+        #will be checked in the main when it is finished
+        utilobject = Utility(self.log,self.model,self.i_m,self.f_m)
+        utilobject.check_inputs()
+        cleanlog=utilobject.clean_log_from_non_fitting_traces()
+        #check if alpha<=1 or less than 0
+        if alpha >1 or alpha <0:
+            sys.exit('Alpha is either greater than one or smaller than 0.')
+
+        #if n = None then n=2*length of longest traces
+        if n== None:
+            n=2*max(len(trace) for trace in cleanlog)
+        alignment_factory=AntiAlignmentFactory(self.log,self.model,self.i_m,self.f_m,"dfs","levenshtein")
+        alignment_factory.compute_anti_alignments(cleanlog, n)
+        #compute all anti-alignemts with length equal or less than n
+        t_b_precision=self.trace_based_precision(alignment_factory, cleanlog)
+        l_b_precision=self.log_based_precision(alignment_factory, cleanlog)
+        return alpha*t_b_precision+(1-alpha)*l_b_precision
+
+    def trace_based_precision(self, alignment_factory, log):
+        """
+        Computes the trace-based precision.
+        :param alignment_dict: Dictionary, where the keys are the length of a alignment, and the value is a list of
+        alignments
+        :param log: Log that is already converted into a list of trace variants
+        :return: trace.based precision score
+        """
+        alignment_dict=alignment_factory.get_dict_of_anti_alignments()
+        sum_of_distance = 0
+        for trace in log:
+            possible_alignments=[]
+            for length,alignments in alignment_dict.items():
+                if length <= len(trace):
+                    for alignment in alignments:
+                        possible_alignments.append(alignment)
+            log_without_trace = log.copy()
+            log_without_trace.remove(trace)
+            anti_alignment=alignment_factory.get_maximal_complete_anti_alignment(possible_alignments, log_without_trace, trace)
+            sum_of_distance+=alignment_factory.compute_distance(trace,anti_alignment)
+        return 1-1/len(log)*sum_of_distance
+
+    def log_based_precision(self, alignment_factory, log):
+        """
+        Compute the log based precision. Note that we do not have to consider a maximum length in this case. The computation
+        of the dictionary already considers a bounded length n.
+        :param alignment_dict: dictionary, where the keys are the length of a alignment, and the value is a list of
+        alignments
+        :param log: Log that is already converted into a list of trace variants
+        :return: log based precision score
+        """
+        all_alignments=alignment_factory.get_list_of_anti_alignments()
+        maximal_anti_alignment=alignment_factory.get_maximal_complete_anti_alignment(all_alignments, log)
+        distance=alignment_factory.compute_min_distance(maximal_anti_alignment, log)
+        return 1-distance
+=======
+def apply(log, model, i_m, f_m,  n=None, alpha=0.5):
+    """
+    To call method to obtain the precision score given those parameters
+    :param log: event log object of PM4Py
+    :param model: Petri Net object of PM4Py
+    :param i_m: Initial marking of given Petri Net
+    :param f_m: Final marking of given Petri Net
+    :param n: length of the longest
+    :param alpha: Weight of trace based score. 1-alpha is weight of log-based score
+    :return: Precision Score
+    """
+    #TODO: will be checked in the main when it is finished
+    check_inputs(log, model, i_m, f_m, alpha)
+    if check_if_flower_model(model, log):
+        return float(0)
+    log=clean_log_from_non_fitting_traces(log,model,i_m,f_m)
+    #if n = None then n=2*length of longest traces
+    if n== None:
+        n=2*max(len(trace) for trace in log)
+    alignment_factory=AntiAlignmentFactory()
+    alignment_factory.compute_anti_alignments(log,model, i_m, f_m, n)
+    #compute all anti-alignemts with length equal or less than n    
+    t_b_precision=trace_based_precision(alignment_factory, log)
+    l_b_precision=log_based_precision(alignment_factory, log)
+    return alpha*t_b_precision+(1-alpha)*l_b_precision
+
+def trace_based_precision(alignment_factory, log):
+    """
+    Computes the trace-based precision.
+    :param alignment_dict: Dictionary, where the keys are the length of a alignment, and the value is a list of
+    alignments
+    :param log: Log that is already converted into a list of trace variants
+    :return: trace.based precision score
+    """
+    alignment_dict=alignment_factory.get_dict_of_anti_alignments()
+    sum_of_distance = 0
+    for trace in log:
+        possible_alignments=[]
+        for length,alignments in alignment_dict.items():
+            if length <= len(trace):
+                for alignment in alignments:
+                    possible_alignments.append(alignment)
+        log_without_trace = log.copy()
+        log_without_trace.remove(trace)
+        anti_alignment=alignment_factory.get_maximal_complete_anti_alignment(possible_alignments, log_without_trace, trace)
+        sum_of_distance+=alignment_factory.compute_distance(trace,anti_alignment)
+    return 1-1/len(log)*sum_of_distance
+
+def log_based_precision(alignment_factory, log):
+    """
+    Compute the log based precision. Note that we do not have to consider a maximum length in this case. The computation
+    of the dictionary already considers a bounded length n.
+    :param alignment_dict: dictionary, where the keys are the length of a alignment, and the value is a list of
+    alignments
+    :param log: Log that is already converted into a list of trace variants
+    :return: log based precision score
+    """
+    all_alignments=alignment_factory.get_list_of_anti_alignments()
+    return 1-alignment_factory.get_maximal_complete_anti_alignment(all_alignments, log, with_distance=True)[0]
+>>>>>>> 6c40ac8c073c8964e380a6c7bede009240a2b35c

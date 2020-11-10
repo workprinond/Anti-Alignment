@@ -1,0 +1,15 @@
+:mod:`anti_alignment.quality_dimensions`
+========================================
+
+.. py:module:: anti_alignment.quality_dimensions
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   precision/index.rst
+
+

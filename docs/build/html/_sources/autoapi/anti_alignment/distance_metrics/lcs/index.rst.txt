@@ -1,0 +1,21 @@
+:mod:`anti_alignment.distance_metrics.lcs`
+==========================================
+
+.. py:module:: anti_alignment.distance_metrics.lcs
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignment.distance_metrics.lcs.longestcommonsubsequence
+
+
+.. function:: longestcommonsubsequence(A, B)
+
+

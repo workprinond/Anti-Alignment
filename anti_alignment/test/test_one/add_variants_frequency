@@ -1,0 +1,38 @@
+from pm4py.objects.log.importer.xes import factory as xes_importer
+from pm4py.objects.log.exporter.csv import factory as csv_exporter
+from pm4py.objects.log.adapters.pandas import csv_import_adapter
+from pm4py.objects.conversion.log import factory as conversion_factory
+from pm4py.objects.log.exporter.xes import factory as xes_exporter
+import csv
+
+def duplicate_variants(src, dist, variants_and_frequency):
+    """
+    Simple Method to duplicate specific variants in a log.
+
+    This method takes the name of the xes log, convert into csv then apply the variants_and_frequency array
+    to duplicate each specified variant with the frequency requested. for example [[1,1207] will duplicate
+    variant with the case_id:1 1207 times with new case_ids.
+    call_example: duplicate_variants("precision_paper","precision_paper_freq",[[1,1207],[2,145],[3,56],[4,23],[5,28]])
+    still need little tweak to be generalized for any log.
+
+    :param src: name of the source xes log file with no extension, ex: 'precision_paper'.
+    :param dist: name of the target xes file with no extension, ex: 'precision_paper_with_frequency'.
+    :param variants_and_frequency: 2D-array to hold which variant to duplicate and specify how many times, ex: [[1,1207].
+    :return: new file with specified name for the dist param.
+    """
+    src_log = xes_importer.apply(src + ".xes")
+    csv_exporter.export(src_log, src + ".csv")
+    with open(dist + ".csv", "w+", newline='') as wcsvfile:
+        writer = csv.writer(wcsvfile)
+        writer.writerow(["concept:name", "Activity", "case:concept:name", "case:creator"])
+        with open(src + ".csv", "r") as csvfile:
+            r = csv.reader(csvfile)
+            for row in r:
+                for l in variants_and_frequency:
+                    if row[2] == str(l[0]):
+                        for i in range(l[1]):
+                            writer.writerow([row[0], row[1], str(l[0]) + str(i), row[3]])
+
+    df = csv_import_adapter.import_dataframe_from_path(dist + ".csv")
+    log = conversion_factory.apply(df)
+    xes_exporter.export_log(log, dist + ".xes")

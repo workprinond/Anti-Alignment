@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>distance_metrics.jarowinkler.JaroWinklerDistance</OriginalElement>
+  <nodes>
+    <node x="298.0" y="241.0">abc.ABCMeta</node>
+    <node x="255.25" y="585.0">abc.ABC</node>
+    <node x="111.75" y="853.0">distance_metrics.jarowinkler.JaroWinklerDistance</node>
+    <node x="73.25" y="664.0">distance_metrics.distance_interface.DistanceMetricInterface</node>
+    <node x="0.0" y="0.0">object</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="abc.ABC" target="object">
+      <point x="-20.25" y="-14.5" />
+      <point x="275.5" y="560.0" />
+      <point x="139.0" y="560.0" />
+      <point x="0.0" y="267.5" />
+    </edge>
+    <edge source="distance_metrics.distance_interface.DistanceMetricInterface" target="abc.ABC">
+      <point x="0.0" y="-69.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="abc.ABC" target="abc.ABCMeta">
+      <point x="20.25" y="-14.5" />
+      <point x="316.0" y="560.0" />
+      <point x="452.5" y="560.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="distance_metrics.jarowinkler.JaroWinklerDistance" target="distance_metrics.distance_interface.DistanceMetricInterface">
+      <point x="0.0" y="-37.5" />
+      <point x="0.0" y="69.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.39451476793248946" x="303.5" y="464.0" />
+  <SelectedNodes>
+    <node>distance_metrics.jarowinkler.JaroWinklerDistance</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+  </Categories>
+</Diagram>
+

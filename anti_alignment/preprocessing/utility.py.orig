@@ -1,0 +1,177 @@
+import pm4py
+import sys
+from pm4py.algo.conformance.alignments import algorithm as alignments
+from pm4py.algo.conformance.alignments.versions import state_equation_a_star as star
+
+#from pm4py.statistics.variants.log.get import get_variants
+#def prepare_event_log(log):
+#    """
+#    We convert the usual Pm4Py object of an event log. The result is a list of variants of traces and these are
+#    represented as strings.  We are only interested in the name of the events. We have to split on the ',' symbol,
+#    because we receive only one long string
+#    :param log: PM4Py object of an event log
+#    :return: List of list, whereby each list represents a variant of a trace
+#    """
+#    variants = list(get_variants(log).keys())
+#    splited_variants=[]
+#    for trace in variants:
+#        splited_variants.append(trace.split(","))
+#    return splited_variants
+class Utility:
+    def __init__(self,log,model,i_m,f_m):
+        self.log = log
+        self.model = model
+        self.i_m = i_m
+        self.f_m = f_m
+
+    def get_activities(self):
+        """
+        Returns a set of event names of a given event log.
+        :param log: PM4Py event log representation
+        :return: set of event names that appears in event log
+        """
+        activities=set()
+        for trace in self.log:
+            for event in trace:
+                activities.add(event['Activity'])
+        return activities
+
+<<<<<<< HEAD
+    def get_perfect_fitting_trace_variants(self,replay_result, activities):
+        """
+        Return a list of traces whereby each trace is perfectly fitting. Only one variant for each trace.
+        :param replay_result: Replay result obtained from the Token-based replay
+        :param activities: Set of activities that occur in an event log
+        :return: List of perfect fitting traces
+        """
+        filtered_log=[]
+        for result in replay_result:
+            if result['trace_fitness'] ==1.0:
+                trace=[]
+                for transition in result['activated_transitions']:
+                    if transition.label in activities:#delete
+                        trace.append(transition.label)
+                if trace not in filtered_log:
+                    filtered_log.append(trace)
+        return filtered_log
+
+    def clean_log_from_non_fitting_traces(self):
+        activities=self.get_activities()
+        #filter event log, only keep perfect fitting traces
+        replay_result=token_replay.apply(self)
+        clean_log=self.get_perfect_fitting_trace_variants(replay_result, activities)
+        return clean_log
+
+    def check_inputs(self):
+        #check if log is PM4Py log object
+        if not isinstance(self.log, pm4py.objects.log.log.EventLog):
+            sys.exit('Log is not a PM4Py event log representation.')
+        #check if net is PM4Py Petri Net object
+        if not isinstance(self.model, pm4py.objects.petri.petrinet.PetriNet):
+            sys.exit('Model is not a PM4Py Petri Net representation.')
+        if not isinstance(self.i_m, pm4py.objects.petri.petrinet.Marking):
+            sys.exit('Initial Marking is not a PM4Py Marking representation.')
+        if not isinstance(self.f_m, pm4py.objects.petri.petrinet.Marking):
+            sys.exit('Final Marking is not a PM4Py Marking representation.')
+
+    def flatten_list(self, lst):
+        """
+        flattens an array
+
+        thie thee.g. converts a list of lists
+        into a single one by appending all items into one big list
+        :param lst: a nested list
+        :return: a flat list
+        :rtype: arr
+        """
+        flat_list = []
+        for sublist in lst:
+            for item in sublist:
+                flat_list.append(item)
+        return flat_list
+=======
+def get_perfect_fitting_trace_variants(replay_result, activities):
+    """
+    Return a list of traces whereby each trace is perfectly fitting. Only one variant for each trace.
+    :param replay_result: Replay result obtained from the Token-based replay
+    :param activities: Set of activities that occur in an event log
+    :return: List of perfect fitting traces
+    """
+    filtered_log=[]
+    for result in replay_result:
+        trace=[]
+        for alignment in result['alignment']:
+            if alignment[1] in activities:
+                trace.append(alignment[1])
+        if trace not in filtered_log:
+            filtered_log.append(trace)
+    return filtered_log
+
+def get_perfect_fitting_trace_variants_and_number_of_occurence(replay_result, activities):
+    """
+    Returns a tuple. First element is a list of traces whereby each trace is perfectly fitting. Only one variant for each trace. Second element is a dict. key is tuple (trace representation), value is number of occurence.
+    :param replay_result: Replay result obtained from the Token-based replay
+    :param activities: Set of activities that occur in an event log
+    :return: List of perfect fitting traces
+    """
+    filtered_log=[]
+    occurence={}
+    for result in replay_result:
+        trace=[]
+        for alignment in result['alignment']:
+            if alignment[1] in activities:
+                trace.append(alignment[1])
+        if trace not in filtered_log:
+            filtered_log.append(trace)
+            occurence[tuple(trace)] = 1
+        else:
+            occurence[tuple(trace)] += 1
+    return (filtered_log, occurence)
+
+def clean_log_from_non_fitting_traces(log,model,i_m,f_m, occurence=False):
+    activities=get_activities(log)
+    #filter event log. The perfect fitting traces are kept. However, for unfitting traces, we keep the alligned event log
+    replay_result=alignments.apply(log, model, i_m, f_m)
+    if not occurence:
+        return get_perfect_fitting_trace_variants(replay_result, activities)
+    else:
+        return get_perfect_fitting_trace_variants_and_number_of_occurence(replay_result, activities)
+
+def check_inputs(log,model,i_m,f_m, alpha):
+    #check if log is PM4Py log object
+    if not isinstance(log, pm4py.objects.log.log.EventLog):
+        sys.exit('Log is not a PM4Py event log representation.')
+    #check if net is PM4Py Petri Net object
+    if not isinstance(model, pm4py.objects.petri.petrinet.PetriNet):
+        sys.exit('Model is not a PM4Py Petri Net representation.')
+    if not isinstance(i_m, pm4py.objects.petri.petrinet.Marking):
+        sys.exit('Initial Marking is not a PM4Py Marking representation.')
+    if not isinstance(f_m, pm4py.objects.petri.petrinet.Marking):
+        sys.exit('Final Marking is not a PM4Py Marking representation.')
+    # check if alpha<=1 or less than 0
+    if alpha > 1 or alpha < 0:
+        sys.exit('Alpha is either greater than one or smaller than 0.')
+
+def check_if_flower_model(model, log):
+    """
+    Quick check to detect obvious flower model. All transitions that are named by an actual event share the same place.
+    :param model: PM4Py Petri Net representation
+    :param log: PM4Py Event log object
+    :return: True if flower model; false otherwise
+    """
+    activities = get_activities(log)
+    source_places=set()
+    target_places=set()
+    for transition in model.transitions:
+        if transition.name in activities:
+            for arc in transition.in_arcs:
+                source_places.add(arc.source)
+            for arc in transition.out_arcs:
+                target_places.add(arc.target)
+    if source_places==target_places:
+        return True
+    else:
+        return False
+
+   
+>>>>>>> 6c40ac8c073c8964e380a6c7bede009240a2b35c

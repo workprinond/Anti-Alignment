@@ -1,0 +1,51 @@
+:mod:`dfs`
+==========
+
+.. py:module:: dfs
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   dfs.findPaths
+   dfs.findPathsRecursive
+
+
+.. function:: findPaths(G, im, em, n)
+
+   finds all correct paths of length n in the graph
+
+   this function returns all paths of length n that begin in the initial
+   marking and end in the final marking. The paths then contain the labels that
+   are present on the edges visited on the path
+
+       :param graph G: networkx MultiDiGraph G
+       :param marking im: initial petri net marking im
+       :param marking em: end/final petri net marking em
+       :param int n: path length of alignments                 
+       :return: all paths of length n as an array containing the cases
+       that are present on the edges takes by the algorithm
+   :rtype: arr
+       
+
+
+.. function:: findPathsRecursive(G, u, n)
+
+   finds all paths of length n in the graph
+
+   this method does an edge depth first search through the graph of length an, considering
+   all edges staring from the given node u
+
+       :param graph G: networkx MultiDiGraph G
+       :param node u: the current node u
+       :param int n: search depth at the current recursion point
+   :return: all paths of length n
+       
+
+

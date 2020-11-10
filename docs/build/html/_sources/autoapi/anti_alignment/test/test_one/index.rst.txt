@@ -1,0 +1,16 @@
+:mod:`anti_alignment.test.test_one`
+===================================
+
+.. py:module:: anti_alignment.test.test_one
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   test_main/index.rst
+   unittests/index.rst
+
+

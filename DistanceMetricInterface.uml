@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>distance_metrics.distance_interface.DistanceMetricInterface</OriginalElement>
+  <nodes>
+    <node x="0.0" y="241.0">abc.ABCMeta</node>
+    <node x="270.75" y="585.0">abc.ABC</node>
+    <node x="88.75" y="664.0">distance_metrics.distance_interface.DistanceMetricInterface</node>
+    <node x="329.0" y="0.0">object</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="abc.ABC" target="object">
+      <point x="20.25" y="-14.5" />
+      <point x="331.5" y="560.0" />
+      <point x="468.0" y="560.0" />
+      <point x="0.0" y="267.5" />
+    </edge>
+    <edge source="distance_metrics.distance_interface.DistanceMetricInterface" target="abc.ABC">
+      <point x="0.0" y="-69.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="abc.ABC" target="abc.ABCMeta">
+      <point x="-20.25" y="-14.5" />
+      <point x="291.0" y="560.0" />
+      <point x="154.5" y="560.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.45443499392466585" x="303.5" y="401.5" />
+  <SelectedNodes>
+    <node>distance_metrics.distance_interface.DistanceMetricInterface</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+  </Categories>
+</Diagram>
+

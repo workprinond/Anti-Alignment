@@ -1,0 +1,121 @@
+:mod:`anti_alignments`
+======================
+
+.. py:module:: anti_alignments
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignments.AntiAlignmentFactory
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignments.flatten_list
+
+
+.. function:: flatten_list(lst)
+
+   flattens an array 
+
+   thie thee.g. converts a list of lists
+   into a single one by appending all items into one big list
+   :param lst: a nested list
+   :return: a flat list
+   :rtype: arr
+
+
+.. py:class:: AntiAlignmentFactory(search_algorithm='dfs', distance_function='levenshtein')
+
+   Create a factory to compute, store and manage Anti-alignments
+
+   .. method:: compute_anti_alignments(self, log, model, im, fm, longest_search)
+
+
+      Compute anti alignments
+
+      Compute all possible anti alignments between a log and a model, whereby the length does not exceed n
+
+      :param model: PM4Py Petri Net representation
+      :param i_m: PM4Py Petri Net representation
+      :param f_m: PM4Py Petri Net representation
+      :param event_log: PM4Py event log representation
+      :param n: maximal of the anti_alignment to consider        
+
+
+   .. method:: get_list_of_anti_alignments(self)
+
+
+      return a list of anti alignemtns
+
+              :return: list of alignments
+      :rtype: arr
+              
+
+
+   .. method:: get_dict_of_anti_alignments(self)
+
+
+      Returns a dictionary of anti alignments
+
+              :return: Dict of alignments. Key is the length of the alignments, value is a list of alignments which have this
+      length
+      :rtype: dict
+              
+
+
+   .. method:: compute_distance(self, trace, anti_alignment)
+
+
+      Method to compute the distance between a trace and an anti-alignment.
+
+      Computes the distance between the given parameters
+
+      :param anti_alignment: an anit-alignment as a list of event names
+      :param trace: List of event names
+      :return: the distance between the anti-alignment and the trace bases on the distance function
+              selected at factory contruction
+      :rtype: int
+
+
+   .. method:: compute_min_distance(self, anti_alignment, log)
+
+
+      computes the minimum distance of the anti alignment from the log
+
+      computes the minimum distance of the anti alignment from the log
+
+      :param anti_alignment: List of strings
+      :param log: prepared event log, meaning: list of list of strings; only variants
+      :return: minimum distance from the anti-alignment towards any trace in the log
+
+
+   .. method:: get_maximal_complete_anti_alignment(self, alignments, log, trace=None)
+
+
+      Method to receive the maximal, complete Anti-alignment.
+
+      Method to receive the maximal, complete Anti-alignment.
+      It is possible that there are multiple anti-alignments with the same distance. However,
+      one of these can be the same as the removed trace for the trace-based precision score. By checking these
+      requirements we ensure that we try to pick another maximal-complete anti-alignment
+
+      :param alignments: list of alignments, whereby each alignment is a list of strings, representing the transition
+      labels without tau
+      :param log: PM4Py representation of an event log
+      :param trace: List of event names. Needed for trace-based computation
+      :return: the maximum complete anti-alignment
+      :rtype: arr
+
+
+

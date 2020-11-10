@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>algo.graph_construction.search_tree.SearchTree</OriginalElement>
+  <nodes>
+    <node x="0.0" y="585.0">algo.graph_construction.search_tree.SearchTree</node>
+    <node x="41.0" y="0.0">object</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="algo.graph_construction.search_tree.SearchTree" target="object">
+      <point x="0.0" y="-157.5" />
+      <point x="0.0" y="267.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="177.0" y="54.5" />
+  <SelectedNodes>
+    <node>algo.graph_construction.search_tree.SearchTree</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+  </Categories>
+</Diagram>
+

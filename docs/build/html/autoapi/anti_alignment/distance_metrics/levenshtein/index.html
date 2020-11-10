@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.2.1.1.1.2. anti_alignment.distance_metrics.levenshtein &mdash; Anti-Alignments for Measuring Precision and Generalization 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Anti-Alignments for Measuring Precision and Generalization
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../GettingStrated.html">1.      Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../LICENSE.html">2.      License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Help.html">3.      Help!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">4. API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Anti-Alignments for Measuring Precision and Generalization</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>4.2.1.1.1.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">anti_alignment.distance_metrics.levenshtein</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/autoapi/anti_alignment/distance_metrics/levenshtein/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-anti_alignment.distance_metrics.levenshtein">
+<span id="anti-alignment-distance-metrics-levenshtein"></span><h1>4.2.1.1.1.2. <a class="reference internal" href="#module-anti_alignment.distance_metrics.levenshtein" title="anti_alignment.distance_metrics.levenshtein"><code class="xref py py-mod docutils literal notranslate"><span class="pre">anti_alignment.distance_metrics.levenshtein</span></code></a><a class="headerlink" href="#module-anti_alignment.distance_metrics.levenshtein" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-contents">
+<h2>4.2.1.1.1.2.1. Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="functions">
+<h3>4.2.1.1.1.2.1.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#anti_alignment.distance_metrics.levenshtein.levenshtein" title="anti_alignment.distance_metrics.levenshtein.levenshtein"><code class="xref py py-obj docutils literal notranslate"><span class="pre">levenshtein</span></code></a>(a, b)</p></td>
+<td><p>counts how many replacements, deletions and insertions of symbols between two strings.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="anti_alignment.distance_metrics.levenshtein.levenshtein">
+<code class="sig-prename descclassname">anti_alignment.distance_metrics.levenshtein.</code><code class="sig-name descname">levenshtein</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#anti_alignment.distance_metrics.levenshtein.levenshtein" title="Permalink to this definition">¶</a></dt>
+<dd><p>counts how many replacements, deletions and insertions of symbols between two strings.</p>
+<p>Levenshtein’s distance (or edit distance) which In our case its needed to obtain γ projected to labeled
+transitions starting from σ. calculating (replace/add/delete) at the same cost of 1.
+for instance the word ‘ababababab’ and ‘bababababa’ are at distance 2 from each other.
+on the other hand if it was hamming distance it would be at distance 10 for the same example.
+further use the output, will be divided by the length of the greatest(len(γ), len(σ))</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>str</em>) – trace or anti-alignment you want to compare as a list of strings</p></li>
+<li><p><strong>b</strong> (<em>str</em>) – trace or anti-alignment you want to compare a to, also as a list of strings</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>returns distance between the provided lists, cost 1 for each operation (replace/add/delete)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrei Zimansky, Harry Beyel, Prinon Das, Ahmed ElDesouki
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+:mod:`search_tree`
+==================
+
+.. py:module:: search_tree
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   search_tree.compute_incidence_matrix
+   search_tree.transition_firing_information
+   search_tree.get_post_firing_marking
+   search_tree.convert_marking
+   search_tree.construct_reachability_graph
+   search_tree.annotate_distance_to_sink
+   search_tree.apply
+
+
+.. function:: compute_incidence_matrix(net)
+
+   We compute the incidence matrix of a Petri Net. It provides us with the firing requirements of a transition and its
+   outcome. The matrix has rows equals to the number of places and columns equals to the the number of transition.
+   As a result, the columns represent the firing information for each transition.
+   :param net: Petri Net object of PM4Py
+   :return: Numpy Matrix representing the incidence matrix.
+
+
+.. function:: transition_firing_information(incidence_matrix, net)
+
+   We transform the information that is available in the incidence in a more readable form. This means that we
+   contruct a dictionary, whereby a key is the name of a
+   :param incidence_matrix: Incidence Matrix of a Petri Net
+   :param net: Petri Net
+   :return: Dictionary
+
+
+.. function:: get_post_firing_marking(marking, firing_dict)
+
+   We compute all possible markings after all fireable transition have been fired.
+   :param marking: current marking
+   :param firing_dict: Dictionary which provides us with the firing infomation whereby the key is the transition
+   :return: List of tuples, whereby the first element is the new marking, the second element is the transition that
+   was used to reach the new marking.
+
+
+.. function:: convert_marking(net, marking)
+
+   Since we are working with numpy arrays as representation of marking, we need no transform the initial marking
+   to such a representation
+   :param marking: Marking which is returned from discovery algorithms of PM4Py
+   :param net: Petri Net object of PM4Py
+   :return: numpy array that represents the initial marking
+
+
+.. function:: construct_reachability_graph(i_m, net, n)
+
+   We construct a reachability graph. Important to note is that we only expand nodes/marking, which can be reached in
+   at most n not-tau transitions.
+   :param initial_marking: inital marking of Petri Net, already coverted into a np.array representation
+   :param net: Petri Net Object
+   :param n: How many not tau transitions are considered
+   :return: Networkx Multi-Directed Graph object
+
+
+.. function:: annotate_distance_to_sink(graph, f_m)
+
+   Each node gets annotated with the the distance to the final marking. Distance means the number of non-tau
+   transitions to reach the final marking
+   :param graph: Reachability graph, networkx MultiDiGraph object
+   :param f_m: final marking, already converted into a numpy representation
+   :return: Networkx MultiDiGraph whereby each node gets an additional attribute 'distance_to_sink'
+
+
+.. function:: apply(net, i_m, f_m, depth)
+
+   Apply method. Use from outside to get an reachbility graph.
+   The reachability graph consist of the following attributes:
+   For nodes:
+   marking: np.arrray representation of the marking
+   distance_from_source: number of non-tau transitions to get to the marking of the node, starting from the initial
+   distance_to_sink: number of non-tau transitions to get to the final marking
+   For edges:
+   transition: transition object of the given Petri Net that is fired
+   weight: If a tau-tranisiton has fired, the weight is 0; else 1. Since we are interested in the projected trace,
+   we need to distinguish.
+   :param net: PM4Py Petri Net object
+   :param i_m: initial marking of the Petri Net object
+   :param f_m: final marking of the Petri Net object
+   :param depth: Depth of the reachability graph, meaning, maximum of non-tau transitions to the final marking
+   :return: 3-tupel, consisting of two nodes and a networkx MultiDigraph object. The first node contains the initial
+   marking, the second node contains the final marking
+
+

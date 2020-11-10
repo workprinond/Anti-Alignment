@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4.3. search_tree &mdash; Anti-Alignments for Measuring Precision and Generalization 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Anti-Alignments for Measuring Precision and Generalization
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStrated.html">1.      Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../LICENSE.html">2.      License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Help.html">3.      Help!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">4. API Reference</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Anti-Alignments for Measuring Precision and Generalization</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>4.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">search_tree</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/autoapi/search_tree/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-search_tree">
+<span id="search-tree"></span><h1>4.3. <a class="reference internal" href="#module-search_tree" title="search_tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">search_tree</span></code></a><a class="headerlink" href="#module-search_tree" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-contents">
+<h2>4.3.1. Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="functions">
+<h3>4.3.1.1. Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#search_tree.compute_incidence_matrix" title="search_tree.compute_incidence_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_incidence_matrix</span></code></a>(net)</p></td>
+<td><p>We compute the incidence matrix of a Petri Net. It provides us with the firing requirements of a transition and its</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#search_tree.transition_firing_information" title="search_tree.transition_firing_information"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transition_firing_information</span></code></a>(incidence_matrix, net)</p></td>
+<td><p>We transform the information that is available in the incidence in a more readable form. This means that we</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#search_tree.get_post_firing_marking" title="search_tree.get_post_firing_marking"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_post_firing_marking</span></code></a>(marking, firing_dict)</p></td>
+<td><p>We compute all possible markings after all fireable transition have been fired.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#search_tree.convert_marking" title="search_tree.convert_marking"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_marking</span></code></a>(net, marking)</p></td>
+<td><p>Since we are working with numpy arrays as representation of marking, we need no transform the initial marking</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#search_tree.construct_reachability_graph" title="search_tree.construct_reachability_graph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">construct_reachability_graph</span></code></a>(i_m, net, n)</p></td>
+<td><p>We construct a reachability graph. Important to note is that we only expand nodes/marking, which can be reached in</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#search_tree.annotate_distance_to_sink" title="search_tree.annotate_distance_to_sink"><code class="xref py py-obj docutils literal notranslate"><span class="pre">annotate_distance_to_sink</span></code></a>(graph, f_m)</p></td>
+<td><p>Each node gets annotated with the the distance to the final marking. Distance means the number of non-tau</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#search_tree.apply" title="search_tree.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a>(net, i_m, f_m, depth)</p></td>
+<td><p>Apply method. Use from outside to get an reachbility graph.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="search_tree.compute_incidence_matrix">
+<code class="sig-prename descclassname">search_tree.</code><code class="sig-name descname">compute_incidence_matrix</code><span class="sig-paren">(</span><em class="sig-param">net</em><span class="sig-paren">)</span><a class="headerlink" href="#search_tree.compute_incidence_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>We compute the incidence matrix of a Petri Net. It provides us with the firing requirements of a transition and its
+outcome. The matrix has rows equals to the number of places and columns equals to the the number of transition.
+As a result, the columns represent the firing information for each transition.
+:param net: Petri Net object of PM4Py
+:return: Numpy Matrix representing the incidence matrix.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="search_tree.transition_firing_information">
+<code class="sig-prename descclassname">search_tree.</code><code class="sig-name descname">transition_firing_information</code><span class="sig-paren">(</span><em class="sig-param">incidence_matrix</em>, <em class="sig-param">net</em><span class="sig-paren">)</span><a class="headerlink" href="#search_tree.transition_firing_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>We transform the information that is available in the incidence in a more readable form. This means that we
+contruct a dictionary, whereby a key is the name of a
+:param incidence_matrix: Incidence Matrix of a Petri Net
+:param net: Petri Net
+:return: Dictionary</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="search_tree.get_post_firing_marking">
+<code class="sig-prename descclassname">search_tree.</code><code class="sig-name descname">get_post_firing_marking</code><span class="sig-paren">(</span><em class="sig-param">marking</em>, <em class="sig-param">firing_dict</em><span class="sig-paren">)</span><a class="headerlink" href="#search_tree.get_post_firing_marking" title="Permalink to this definition">¶</a></dt>
+<dd><p>We compute all possible markings after all fireable transition have been fired.
+:param marking: current marking
+:param firing_dict: Dictionary which provides us with the firing infomation whereby the key is the transition
+:return: List of tuples, whereby the first element is the new marking, the second element is the transition that
+was used to reach the new marking.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="search_tree.convert_marking">
+<code class="sig-prename descclassname">search_tree.</code><code class="sig-name descname">convert_marking</code><span class="sig-paren">(</span><em class="sig-param">net</em>, <em class="sig-param">marking</em><span class="sig-paren">)</span><a class="headerlink" href="#search_tree.convert_marking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Since we are working with numpy arrays as representation of marking, we need no transform the initial marking
+to such a representation
+:param marking: Marking which is returned from discovery algorithms of PM4Py
+:param net: Petri Net object of PM4Py
+:return: numpy array that represents the initial marking</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="search_tree.construct_reachability_graph">
+<code class="sig-prename descclassname">search_tree.</code><code class="sig-name descname">construct_reachability_graph</code><span class="sig-paren">(</span><em class="sig-param">i_m</em>, <em class="sig-param">net</em>, <em class="sig-param">n</em><span class="sig-paren">)</span><a class="headerlink" href="#search_tree.construct_reachability_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>We construct a reachability graph. Important to note is that we only expand nodes/marking, which can be reached in
+at most n not-tau transitions.
+:param initial_marking: inital marking of Petri Net, already coverted into a np.array representation
+:param net: Petri Net Object
+:param n: How many not tau transitions are considered
+:return: Networkx Multi-Directed Graph object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="search_tree.annotate_distance_to_sink">
+<code class="sig-prename descclassname">search_tree.</code><code class="sig-name descname">annotate_distance_to_sink</code><span class="sig-paren">(</span><em class="sig-param">graph</em>, <em class="sig-param">f_m</em><span class="sig-paren">)</span><a class="headerlink" href="#search_tree.annotate_distance_to_sink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Each node gets annotated with the the distance to the final marking. Distance means the number of non-tau
+transitions to reach the final marking
+:param graph: Reachability graph, networkx MultiDiGraph object
+:param f_m: final marking, already converted into a numpy representation
+:return: Networkx MultiDiGraph whereby each node gets an additional attribute ‘distance_to_sink’</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="search_tree.apply">
+<code class="sig-prename descclassname">search_tree.</code><code class="sig-name descname">apply</code><span class="sig-paren">(</span><em class="sig-param">net</em>, <em class="sig-param">i_m</em>, <em class="sig-param">f_m</em>, <em class="sig-param">depth</em><span class="sig-paren">)</span><a class="headerlink" href="#search_tree.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply method. Use from outside to get an reachbility graph.
+The reachability graph consist of the following attributes:
+For nodes:
+marking: np.arrray representation of the marking
+distance_from_source: number of non-tau transitions to get to the marking of the node, starting from the initial
+distance_to_sink: number of non-tau transitions to get to the final marking
+For edges:
+transition: transition object of the given Petri Net that is fired
+weight: If a tau-tranisiton has fired, the weight is 0; else 1. Since we are interested in the projected trace,
+we need to distinguish.
+:param net: PM4Py Petri Net object
+:param i_m: initial marking of the Petri Net object
+:param f_m: final marking of the Petri Net object
+:param depth: Depth of the reachability graph, meaning, maximum of non-tau transitions to the final marking
+:return: 3-tupel, consisting of two nodes and a networkx MultiDigraph object. The first node contains the initial
+marking, the second node contains the final marking</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Andrei Zimansky, Harry Beyel, Prinon Das, Ahmed ElDesouki
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

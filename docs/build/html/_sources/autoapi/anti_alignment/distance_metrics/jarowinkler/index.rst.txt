@@ -1,0 +1,25 @@
+:mod:`anti_alignment.distance_metrics.jaro-winkler`
+===================================================
+
+.. py:module:: anti_alignment.distance_metrics.jaro-winkler
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignment.distance_metrics.jaro-winkler.jaro_distance
+   anti_alignment.distance_metrics.jaro-winkler.jaro_Winkler
+
+
+.. function:: jaro_distance(s1, s2)
+
+
+.. function:: jaro_Winkler(s1, s2)
+
+

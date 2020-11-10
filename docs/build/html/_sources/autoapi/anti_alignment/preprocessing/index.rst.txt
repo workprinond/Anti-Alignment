@@ -1,0 +1,16 @@
+:mod:`anti_alignment.preprocessing`
+===================================
+
+.. py:module:: anti_alignment.preprocessing
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   InputHandler/index.rst
+   utility/index.rst
+
+

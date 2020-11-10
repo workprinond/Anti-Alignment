@@ -1,0 +1,27 @@
+:mod:`anti_alignment`
+=====================
+
+.. py:module:: anti_alignment
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   distance_metrics/index.rst
+   preprocessing/index.rst
+   quality_dimensions/index.rst
+   test/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   main/index.rst
+
+

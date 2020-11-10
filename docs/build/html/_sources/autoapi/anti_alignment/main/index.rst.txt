@@ -1,0 +1,21 @@
+:mod:`anti_alignment.main`
+==========================
+
+.. py:module:: anti_alignment.main
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignment.main.main
+
+
+.. function:: main()
+
+

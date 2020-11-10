@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="net1" type="http://www.pnml.org/version-2009/grammar/pnmlcoremodel">
+    <page id="n0">
+      <place id="p_3">
+        <name>
+          <text>p_3</text>
+        </name>
+      </place>
+      <place id="p_1">
+        <name>
+          <text>p_1</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="p_4">
+        <name>
+          <text>p_4</text>
+        </name>
+      </place>
+      <place id="p_5">
+        <name>
+          <text>p_5</text>
+        </name>
+      </place>
+      <place id="p_6">
+        <name>
+          <text>p_6</text>
+        </name>
+      </place>
+      <place id="p_7">
+        <name>
+          <text>p_7</text>
+        </name>
+      </place>
+      <place id="p_8">
+        <name>
+          <text>p_8</text>
+        </name>
+      </place>
+      <place id="p_2">
+        <name>
+          <text>p_2</text>
+        </name>
+      </place>
+      <place id="p_9">
+        <name>
+          <text>p_9</text>
+        </name>
+      </place>
+      <transition id="B">
+        <name>
+          <text>B</text>
+        </name>
+      </transition>
+      <transition id="tau">
+        <name>
+          <text>tau</text>
+        </name>
+        <toolspecific tool="ProM" version="6.4" activity="$invisible$" localNodeID="c8b5a43a-9252-459a-99e7-bb9629e186c8"/>
+      </transition>
+      <transition id="C">
+        <name>
+          <text>C</text>
+        </name>
+      </transition>
+      <transition id="I">
+        <name>
+          <text>I</text>
+        </name>
+      </transition>
+      <transition id="D">
+        <name>
+          <text>D</text>
+        </name>
+      </transition>
+      <transition id="E">
+        <name>
+          <text>E</text>
+        </name>
+      </transition>
+      <transition id="F">
+        <name>
+          <text>F</text>
+        </name>
+      </transition>
+      <transition id="G">
+        <name>
+          <text>G</text>
+        </name>
+      </transition>
+      <transition id="H">
+        <name>
+          <text>H</text>
+        </name>
+      </transition>
+      <transition id="A">
+        <name>
+          <text>A</text>
+        </name>
+      </transition>
+      <arc id="-9223371953655925500" source="p_2" target="B"/>
+      <arc id="83198850312" source="p_2" target="C"/>
+      <arc id="83198850319" source="B" target="p_3"/>
+      <arc id="-9223371953655925486" source="B" target="p_4"/>
+      <arc id="83198850326" source="C" target="p_4"/>
+      <arc id="-9223371953655925479" source="C" target="p_5"/>
+      <arc id="83198850333" source="p_5" target="tau"/>
+      <arc id="-9223371953655925472" source="p_5" target="G"/>
+      <arc id="83198850340" source="tau" target="p_6"/>
+      <arc id="-9223371953655925465" source="G" target="p_6"/>
+      <arc id="83198850347" source="p_6" target="H"/>
+      <arc id="-9223371953655925458" source="H" target="p_7"/>
+      <arc id="83198850354" source="p_3" target="E"/>
+      <arc id="-9223371953655925451" source="p_4" target="E"/>
+      <arc id="83198850361" source="p_4" target="F"/>
+      <arc id="-9223371953655925444" source="p_4" target="D"/>
+      <arc id="83198848702" source="A" target="p_2"/>
+      <arc id="83198850368" source="D" target="p_4"/>
+      <arc id="-9223371953655925437" source="p_7" target="F"/>
+      <arc id="83198850375" source="E" target="p_8"/>
+      <arc id="-9223371953655925430" source="F" target="p_8"/>
+      <arc id="83198850382" source="p_8" target="I"/>
+      <arc id="-9223371953655925423" source="I" target="p_9"/>
+      <arc id="-9223371953655927068" source="p_1" target="A"/>
+    </page>
+    <finalmarkings>
+      <marking>
+        <place idref="p_9">
+          <text>1</text>
+        </place>
+      </marking>
+    </finalmarkings>
+  </net>
+</pnml>

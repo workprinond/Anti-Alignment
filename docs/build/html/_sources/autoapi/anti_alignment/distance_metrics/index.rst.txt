@@ -1,0 +1,18 @@
+:mod:`anti_alignment.distance_metrics`
+======================================
+
+.. py:module:: anti_alignment.distance_metrics
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   distance-interface/index.rst
+   jaro-winkler/index.rst
+   lcs/index.rst
+   levenshtein/index.rst
+
+

@@ -1,0 +1,42 @@
+:mod:`anti_alignment.preprocessing.utility`
+===========================================
+
+.. py:module:: anti_alignment.preprocessing.utility
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   anti_alignment.preprocessing.utility.get_activities
+   anti_alignment.preprocessing.utility.get_perfect_fitting_trace_variants
+   anti_alignment.preprocessing.utility.clean_log_from_non_fitting_traces
+   anti_alignment.preprocessing.utility.check_inputs
+
+
+.. function:: get_activities(log)
+
+   Returns a set of event names of a given event log.
+   :param log: PM4Py event log representation
+   :return: set of event names that appears in event log
+
+
+.. function:: get_perfect_fitting_trace_variants(replay_result, activities)
+
+   Return a list of traces whereby each trace is perfectly fitting. Only one variant for each trace.
+   :param replay_result: Replay result obtained from the Token-based replay
+   :param activities: Set of activities that occur in an event log
+   :return: List of perfect fitting traces
+
+
+.. function:: clean_log_from_non_fitting_traces(log, model, i_m, f_m)
+
+
+.. function:: check_inputs(log, model, i_m, f_m)
+
+

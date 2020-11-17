@@ -12,13 +12,6 @@ What things you need to install the software and how to install them
 - Python 3.6.x
 - NumPy Pkg
 - PM4PY Pkg
-- ...
- 
-## Project Documents
-- [Project Initiation](https://docs.google.com/document/d/1oLLI5VRgAnhYJSnFqGUo7mIAfOkoT9_8A6eRF_x_e0U)
-- [Requirement Engineering](https://docs.google.com/document/d/1IWGxKjdESjc_ksnGnQiXLJ6Bh_weoCJkfTBWIwgo4l0)
-- [Product Backlog](https://docs.google.com/document/d/1s6g7aWgGWZElVpPh25g8Ad-TbFfWjIPnXyASMs-HxUM)
-- [First Sprint Planning](https://docs.google.com/document/d/1s6ShlVVOLqD-Q_3l4SapPAAuPo3X8JIQsJg5T3PnBqs)
 
 ## Tools used
 - Git
@@ -32,7 +25,6 @@ We use [Git](https://git-scm.com/) for versioning. For the versions available, s
 ## License
 This project is licensed under the Apache License - see the [LICENSE.md](https://github.com/workprinond/Anti-Alignment/blob/master/LICENSE) file for details
 
-## Acknowledgments
-...
+
 
 
